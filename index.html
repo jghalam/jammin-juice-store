@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jammin Juice - Caribbean Pepper Sauce</title>
+  <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1QKkJD72icTYkc3dBmOeidnGvnUM5feRE&sz=w128">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #faf8f5;
+    }
+    iframe {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="app-frame" title="Jammin Juice Storefront" allow="payment"></iframe>
+
+  <script>
+    const APPS_SCRIPT_URL = "YOUR_APPS_SCRIPT_WEB_APP_URL";
+    // Forward query parameters (e.g. ?page=admin) to the Apps Script app
+    const queryString = window.location.search;
+    document.getElementById("app-frame").src = APPS_SCRIPT_URL + queryString;
+  </script>
+</body>
+</html>
